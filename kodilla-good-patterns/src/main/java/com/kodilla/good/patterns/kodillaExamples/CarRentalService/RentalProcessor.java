@@ -9,14 +9,13 @@ public class RentalProcessor {
         this.rentalService = rentalService;
     }
 
-    public RentalDto process(final RentRequest rentRequest) {
+    public RentalDto process(RentRequest rentRequest) {
         boolean isRented = rentalService.rent(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());
         if (isRented) {
-//            informationService.inform(rentRequest.getUser());
-//            rentalRepository.createRental(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());
             return new RentalDto(rentRequest.getUser(), true);
         } else {
             return new RentalDto(rentRequest.getUser(), false);
         }
     }
+
 }

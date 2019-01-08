@@ -1,19 +1,19 @@
 package com.kodilla.good.patterns.kodillaExamples.CarRentalService;
 
 public class User {
-    private String name;
-    private String surname;
+    private String firstName;
+    private String lastName;
 
-    public User(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+    public User(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getLastName() {
+        return lastName;
     }
 }
