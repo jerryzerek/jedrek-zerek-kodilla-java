@@ -1,6 +1,4 @@
-package com.kodilla.good.patterns.kodillaExamples.CarRentalService;
-
-import java.time.LocalDateTime;
+package com.kodilla.good.patterns.kodillaExamples.CarRentalServices;
 
 public class Application {
     public static void main(String[] args) {
