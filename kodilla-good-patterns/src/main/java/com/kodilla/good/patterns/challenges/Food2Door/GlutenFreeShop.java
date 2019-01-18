@@ -16,7 +16,7 @@ public class GlutenFreeShop implements FoodProducer {
 
         Map<Product, Integer> productsList = new HashMap<>();
 
-        productsList.put(new GlutenFreeProduct("bread", "Bread made from coconut flour"), 50);
+        productsList.put(new GlutenFreeProduct("bread", "Bread made from coconut flour"), 2);
         productsList.put(new GlutenFreeProduct("rice", "extraordinary white rice"), 150);
         productsList.put(new GlutenFreeProduct("cookies", "amaranth cookies with dactyls"), 20);
         productsList.put(new GlutenFreeProduct("coconut flour", "finely ground coconut flour"), 4);
