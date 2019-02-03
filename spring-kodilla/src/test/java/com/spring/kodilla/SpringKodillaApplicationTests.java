@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
@@ -20,13 +21,13 @@ public class SpringKodillaApplicationTests {
     public void testCircleLoadedIntoContainer() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.spring.kodilla");
-        Shape shape = (Shape) context.getBean("circle");
 
         //When
-        String name = shape.getShapeName();
+        Shape shape =  (Shape) context.getBean("circle");
+        String result = shape.getShapeName();
 
         //Then
-        Assert.assertEquals("This is a circle", name);
+        Assert.assertEquals("This is a circle", result);
     }
 
     @Test
@@ -55,17 +56,20 @@ public class SpringKodillaApplicationTests {
         Assert.assertEquals("This is a square", name);
     }
 
+
     @Test
-    public void testShapeLoadedIntoContainer() {
+    public void testShapeLoadedIntoContainter() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.spring.kodilla");
 
-        Shape shape = (Shape) context.getBean("chosenShape");
         //When
+        Shape shape = (Shape) context.getBean("chosenShape");
         String name = shape.getShapeName();
+
         //Then
-        System.out.println("Chosen shape says " + name);
+        System.out.println("Chosen shape says: " + name);
     }
+
 
 }
 

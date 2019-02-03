@@ -7,25 +7,21 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
 public final class Library {
-    private final List<String> books = new ArrayList<>();
     private LibraryDbController libraryDbController;
 
-    @Autowired
-    public Library(final LibraryDbController libraryDbController) {
+    public Library(LibraryDbController libraryDbController) {
         this.libraryDbController = libraryDbController;
     }
 
     public Library() {
     }
 
-    public void saveToDb() {
-        libraryDbController.saveData();
-    }
-
-    public void loadFromDb() {
+    public void loadData() {
         libraryDbController.loadData();
     }
 
+    public void saveToDb() {
+        libraryDbController.saveData();
+    }
 }

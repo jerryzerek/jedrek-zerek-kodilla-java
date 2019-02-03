@@ -19,11 +19,12 @@ public class LibraryTestSuite {
     public void testLoadFromDb() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.spring.kodilla");
-        Library library = context.getBean(Library.class);
+
         //When
-        library.loadFromDb();
+        Library library = (Library) context.getBean("getLibrary");
+
         //Then
-        //do nothing
+        library.loadData();
     }
 
     @Test
@@ -38,7 +39,7 @@ public class LibraryTestSuite {
     @Test
     public void testContext() {
         //Given
-        ApplicationContext context = new AnnotationConfigApplicationContext("com.spring.kodilla.library");
+        ApplicationContext context = new AnnotationConfigApplicationContext(LibraryConfig.class);
 
 
         //When & Then
