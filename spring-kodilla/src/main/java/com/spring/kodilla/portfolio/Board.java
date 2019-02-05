@@ -17,4 +17,13 @@ public class Board {
         doneList.getTasks().stream()
                 .forEach(System.out::println);
     }
+
+
+    public TaskList getToDoList() {
+        return toDoList;
+    }
+
+    public TaskList getDoneList() {
+        return doneList;
+    }
 }

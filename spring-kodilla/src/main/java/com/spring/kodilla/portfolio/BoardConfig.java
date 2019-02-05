@@ -27,14 +27,12 @@ public class BoardConfig {
 
 
     @Bean (name="toDoList")
-    @Scope ("prototype")
     public TaskList getToDoTaskList() {
         return new TaskList();
     }
 
 
     @Bean (name="doneList")
-    @Scope ("prototype")
     public TaskList getDoneTaskList() {
         return new TaskList();
     }
