@@ -8,14 +8,14 @@ import java.util.List;
 public class Bigmac {
     private List<Bun> bunType;
     private List<Sauce> sauceType;
-    private int burgers;
     private List<Ingredient> ingredients;
+    private int burgers;
 
     public static class BigmacBuilder {
         private List<Bun> bunType = new ArrayList<>();
         private List<Sauce> sauceType = new ArrayList<>();
-        private int burgers;
         private List<Ingredient> ingredients = new ArrayList<>();
+        private int burgers;
 
         public BigmacBuilder bun(Bun bun) {
             bunType.add(bun);
