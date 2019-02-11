@@ -15,16 +15,16 @@ public class ShapeFactoryTestSuite {
         Assert.assertEquals("The rounded circle", circle.getName());
     }
 
-    @Test
-    public void testFactorySquare() {
-        //Given
-        ShapeFactory factory = new ShapeFactory();
-        //When
-        Shape square = factory.makeShape(ShapeFactory.SQUARE);
-        //Then
-        Assert.assertEquals(49.0, square.getArea(), 0);
-        Assert.assertEquals("The angular square", square.getName());
-    }
+//    @Test
+//    public void testFactorySquare() {
+//        //Given
+//        ShapeFactory factory = new ShapeFactory();
+//        //When
+//        Shape square = factory.makeShape(ShapeFactory.SQUARE);
+//        //Then
+//        Assert.assertEquals(49.0, square.getArea(), 0);
+//        Assert.assertEquals("The angular square", square.getName());
+//    }
 
     @Test
     public void testFactoryRectangle() {

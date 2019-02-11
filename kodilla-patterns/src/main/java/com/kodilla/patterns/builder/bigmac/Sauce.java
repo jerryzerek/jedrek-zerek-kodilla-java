@@ -1,7 +1,7 @@
 package com.kodilla.patterns.builder.bigmac;
 
 public enum Sauce {
-    TYSIĄCA_WYSP("Sos tysiąca wysp"),
+    TYSIACA_WYSP("Sos tysiąca wysp"),
     STANDARD("Sos standard"),
     BARBECUE("Sos barbecue");
 

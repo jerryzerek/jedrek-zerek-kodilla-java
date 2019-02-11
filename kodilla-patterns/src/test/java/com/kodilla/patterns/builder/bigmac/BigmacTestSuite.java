@@ -12,7 +12,7 @@ public class BigmacTestSuite {
                 .burgers(2)
                 .ingredient(Ingredient.SHRIMPS)
                 .ingredient(Ingredient.CHEESE)
-                .sauce(Sauce.TYSIĄCA_WYSP)
+                .sauce(Sauce.TYSIACA_WYSP)
                 .ingredient(Ingredient.ONION)
                 .build();
 
