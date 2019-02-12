@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
 
+import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
+
 
 @Transactional
 @RunWith(SpringRunner.class)
@@ -45,9 +45,9 @@ public class TaskDaoTestSuite {
 //        tasklist2.forEach(tsk -> System.out.println(tsk.getCreated()));
     }
 
-    @Transactional
+
     @Test
-    public void testDaoFindByduration() {
+    public void testDaoFindByDuration() {
         //Given
         Task task = new Task(DESCRIPTION, 10);
         taskDao.save(task);
@@ -57,7 +57,7 @@ public class TaskDaoTestSuite {
         List<Task> readTasks = taskDao.findByDuration(duration);
 
         //Then
-        Assert.assertEquals(3, readTasks.size());
+        Assert.assertEquals(1, readTasks.size());
     }
 }
 
