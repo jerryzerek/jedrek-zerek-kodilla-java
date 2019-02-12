@@ -1,11 +1,4 @@
 rootProject.name = 'kodlla-course'
-include 'kodilla-testing'
-include 'kodilla-patterns'
-include 'kodilla-jdbc'
-include 'spring-kodilla'
-include 'kodilla-spring-web'
-include 'kodilla-spring-intro'
-include 'kodilla-spring'
 include 'kodilla-hibernate'
-include 'kodilla-good-patterns'
+
 

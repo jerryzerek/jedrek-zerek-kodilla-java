@@ -8,10 +8,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+
 import java.util.List;
-
 
 @Transactional
 @RunWith(SpringRunner.class)
@@ -24,26 +24,19 @@ public class TaskDaoTestSuite {
     @Test
     public void testTaskDaoSave() {
         //Given
-
-        //Task to reprezentacja wiersza w javie, stworzyłem sobie wiersz
         Task task = new Task(DESCRIPTION, 7);
 
         //When
-        //Dorzucam stworzyony wiersz do bazy danych
         taskDao.save(task);
 
         //Then
-        //Tutaj odwołuje się do tego co utworzyłem w Javie (1 linijka)
         int id = task.getId();
         Task readTask = taskDao.findById(id).orElse(null);
         Assert.assertEquals(id, readTask.getId());
 
-//        List<Task> taskList = taskDao.findByDuration(7);
-//        taskList.forEach(tsk -> System.out.println(tsk.getCreated()));
-//
-//        List<Task> tasklist2 = taskDao.findByDurationAndId(7,5);
-//        tasklist2.forEach(tsk -> System.out.println(tsk.getCreated()));
+
     }
+}
 
 
     @Test
@@ -59,6 +52,8 @@ public class TaskDaoTestSuite {
         //Then
         Assert.assertEquals(1, readTasks.size());
     }
+
+
 }
 
 
