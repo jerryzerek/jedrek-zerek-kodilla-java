@@ -1,5 +1,9 @@
 package com.kodilla.hibernate.task;
 
+import com.kodilla.hibernate.task.dao.TaskFinancialDetails;
+import com.kodilla.hibernate.tasklist.TaskList;
+
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -11,10 +15,14 @@ public final class Task {
     private String description;
     private Date created;
     private int duration;
-//    private TaskFinancialDetails taskFinancialDetails;
+    private TaskFinancialDetails taskFinancialDetails;
+    private TaskList taskList;
+
 
     public Task() {
     }
+
+
 
     public Task(String description, int duration) {
         this.description = description;
@@ -28,6 +36,19 @@ public final class Task {
     @Column(name = "ID", unique = true)
     public int getId() {
         return id;
+    }
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "TASKS_FINANCIAL_ID")
+    public TaskFinancialDetails getTaskFinancialDetails() {
+        return taskFinancialDetails;
+    }
+
+
+    @ManyToOne
+    @JoinColumn(name = "TASKLIST_ID")
+    public TaskList getTaskList() {
+        return taskList;
     }
 
     @Column(name = "DESCRIPTION")
@@ -46,11 +67,6 @@ public final class Task {
         return duration;
     }
 
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "TASKS_FINANCIALS_ID")
-//    public TaskFinancialDetails getTaskFinancialDetails() {
-//        return taskFinancialDetails;
-//    }
 
     private void setId(int id) {
         this.id = id;
@@ -68,8 +84,12 @@ public final class Task {
         this.duration = duration;
     }
 
-//    public void setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) {
-//        this.taskFinancialDetails = taskFinancialDetails;
-//    }
+    public void setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) {
+        this.taskFinancialDetails = taskFinancialDetails;
+    }
+
+    public void setTaskList(TaskList taskList) {
+        this.taskList = taskList;
+    }
 }
 

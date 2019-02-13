@@ -7,8 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Transactional
-@Repository
-public interface TaskListDao extends CrudRepository<TaskList, Integer> {
-    List<TaskList> findByListName(String listName);
-}
+//@Transactional
+//@Repository
+//public interface TaskListDao extends CrudRepository<TaskList, Integer> {
+//    List<TaskList> findByListName(String listName);
+//}
